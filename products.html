@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyShop</title>
+
+    <!-- Bootstrap -->
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="static/css/fontawesome.css" rel="stylesheet">
+    <link href="static/css/app.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gShopNavigation" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="products.html">GShop</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="gShopNavigation">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-shopping-cart"></i>Shopping cart (<span class="total-count">0</span>) <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-primary navbar-btn navbar-right"><i class="fa fa-facebook-f fa-facebook:before" aria-hidden="true"></i>Sign in</a>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+       <div class="row">
+           <aside class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
+               <div class="visible-xs-block xs-option-container">
+                   <a class="pull-right" data-toggle="collapse" href="#productCatalog">Product catalog<span class="caret"></span></a>
+                   <a  data-toggle="collapse" href="#findProducts">Find products <span class="caret"></span></a>
+               </div>
+
+
+               <!-- search form -->
+               <form action="products.html">
+                <div id="#findProducts" class="panel panel-success collapse">
+                   <div class="panel-heading">Find products</div>
+                   <div class="panel-body">
+                       <div class="input-group">
+                           <input type="text" name="query" class="form-control" placeholder="Search query">
+                           <span class="input-group-btn">
+                                <button id="goSearch" type="submit" class="btn btn-default" type="button">Go!</button>
+                            </span>
+                       </div>
+                       <div class="more-options">
+                           <a  data-toggle="collapse" href="#searchOptions">
+                               More filters <span class="caret"></span>
+                           </a>
+                       </div>
+                   </div>
+                    <div id="searchOptions" class="collapse">
+                        <div class="panel-heading">Category Filters</div>
+                        <div class="panel-body categories" >
+                            <label><input type="checkbox" id="allCategories">
+                                All
+                            </label>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="category" value="1" class="search-option">
+                                    E-guitar (89)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="category" value="2" class="search-option">
+                                        Acustic (89)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel-heading">Producers Filters</div>
+                        <div class="panel-body producers">
+                            <label><input type="checkbox" id="allProducers">
+                                All
+                            </label>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="producer" value="1" class="search-option">
+                                        Harley Benton (89)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="producer" value="2" class="search-option">
+                                        ESP (56)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               </form>
+               <!-- Categories -->
+               <div id="productCatalog" class="panel panel-success collapse">
+                   <div class="panel-heading">Product Catalog</div>
+                        <div class="list-group">
+                           <a href="#" class="list-group-item"><span class="badge">74</span>Guitar
+                           </a>
+                           <a href="#" class="list-group-item"><span class="badge">55</span>With tremolo</a>
+                           <a href="#" class="list-group-item"><span class="badge">44</span>Humbakers</a>
+                           <a href="#" class="list-group-item"><span class="badge">24</span>telecaster</a>
+                           <a href="#" class="list-group-item"><span class="badge">14</span>active system</a>
+                       </div>
+
+               </div>
+               <!-- Categories -->
+           </aside>
+
+           <main class="col-xs-12 col-sm-8 col-md-9 col-lg-10">
+                <div id = "productList" >
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1234" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/187227.webp.jpg" alt="strat">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">oak</span> best choice for you</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">hard solid electric guitar</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Electric guitar</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Harley Benton</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1231" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/455849.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1232" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/464719.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1233" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/479354.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1235" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/484754.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1236" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/484754.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1237" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/484754.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1238" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/484754.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1239" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/484754.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1230" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/484754.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xlg-2">
+                            <div id="product1204" class="panel panel-default product">
+                                <div class="panel-body">
+                                    <div class="thumbnail">
+                                        <img src="media/484754.webp.jpg" alt="product name">
+                                        <div class="desc">
+                                            <div class="cell">
+                                                <p><span class="title">Details</span> Some text</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="name">Product name</h4>
+                                    <hr>
+                                    <div class="code">
+                                        code: 27000
+                                    </div>
+                                    <div class="price">price: 9999
+                                    </div>
+                                    <a class="btn btn-primary pull-right" data-id-product="1234">Buy</a>
+                                    <ul class="list-group">
+                                        <li class="list-group-item"><small>Category</small> <span class="category">Smartphone</span></li>
+                                        <li class="list-group-item"><small>Producer:</small> <span class="producer">Apple</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                        <div class="text-center">
+                            <a id="loadMore" class="btn btn-success">load more products</a>
+                        </div>
+
+                </div>
+
+           </main>
+
+
+
+
+</div>
+
+       </div>
+
+
+    <aside>
+
+    </aside>
+
+
+    <footer>
+        <div class="container">
+            <p class="text-center">GShop demo for <a href="https://owu.com.ua/" target="_blank">https://owu.com.ua/, 2021</a> </p>
+        </div>
+    </footer>
+
+<script src="static/js/jquery.js"></script>
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+</html>
